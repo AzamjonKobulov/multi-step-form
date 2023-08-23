@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} min-h-screen px-5 flex items-center justify-center bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-500 bg-no-repeat`}
+        className={`${poppins.className} h-screen px-5 flex items-center justify-center bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-500 bg-no-repeat`}
       >
         {children}
       </body>
