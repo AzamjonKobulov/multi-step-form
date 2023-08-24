@@ -10,15 +10,15 @@ import Login from './components/Login';
 import Button from './components/common/Button';
 import SuccesMessage from './components/SuccesMessage';
 
-const steps = [
-  <Name key={1} />,
-  <Contact key={2} />,
-  <Birth key={3} />,
-  <Login key={4} />,
-];
-
 export default function Home() {
   const [move, setMove] = useState<number>(1);
+
+  const steps = [
+    <Name key={1} />,
+    <Contact key={2} />,
+    <Birth key={3} />,
+    <Login key={4} />,
+  ];
 
   const handleIncMove = () => {
     move < 5 && setMove((prev) => prev + 1);
@@ -32,12 +32,22 @@ export default function Home() {
     <div className="max-w-sm w-full px-7 pt-16 pb-10 text-center bg-white rounded-xl">
       <h1 className="text-4xl font-semibold">Signup form</h1>
       <Steps move={move} />
-      <div className="flex">
+      <div className="flex overflow-hidden">
         {move < 5 ? (
           steps.map((step, index) => (
             <div
               key={step.key}
-              className={`${index + 1 === move ? 'block' : 'hidden'} w-full`}
+              // style={{
+              //   transform: `translateX(${(index + 1 - move) * 100}%)`,
+              // }}
+              // className={`${
+              //   index + 1 === move
+              //     ? 'translate-x-0'
+              //     : `translate-x-[${(index + 1 - move) * 100}%]`
+              // } w-full shrink-0 transition-all duration-300`}
+              className={`${
+                move === index + 1 ? 'block' : 'hidden'
+              } w-full shrink-0 transition-all duration-300`}
             >
               {step}
             </div>

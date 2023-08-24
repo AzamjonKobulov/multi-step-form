@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Name: React.FC = () => {
+const Login: React.FC = () => {
   return (
     <div className="space-y-3.5">
       <h2 className="text-2xl text-start mt-10 font-medium">Login Details:</h2>
@@ -26,4 +26,4 @@ const Name: React.FC = () => {
   );
 };
 
-export default Name;
+export default Login;
